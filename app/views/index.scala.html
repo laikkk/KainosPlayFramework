@@ -1,0 +1,25 @@
+@(message: String)
+
+<form action="@routes.Application.addPerson()" method="post">
+    <label>Name</label>
+    <input type="text" name="name">
+    <label>Surname</label>
+    <input type="text" name="surname">
+    <label>Birth date</label>
+    <input type="text" name="birthdate">
+    <label>E-mail</label>
+    <input type="email" name="email">
+    <label>Favorite Database</label>
+    <select name="favoritedatabase">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+    <label>Notes</label>
+    <textarea name="notes"></textarea>
+    <button>Submit</button>
+</form>
+
+
+
