@@ -1,0 +1,26 @@
+/*
+*   Content to the task
+*   Technologicznie ma to być Play! Framework dla javy, Java 8, PostgreSql z Hibernatem oraz Bootstrap na frontendach.
+
+Zadanie będzie polegało na:
+•	zestawieniu środowiska -
+o	jako IDE Intellij IDEA wersji community
+o	zainstalowanie wszelkich zależności (java JDK 8u11 , Play! for java 2.3.2, PostgreSQL 9.3, Hibernate 4.3.6.FINAL i potrzebnych bibliotek frontendowych [min. Bootstrap 3.2.0])
+•	Zakodowaniu prostej aplikacji webowej z wykorzystaniem formularzy i zapisem do bazy.
+
+Strona ma umożliwiać dodanie zgłoszeń i zapis wyników w bazie.
+
+Na formularzu powinny znaleźć się następujące pola:
+•	Imię (textbox - max 100 znaków)
+•	Nazwisko textbox - (max 100 znaków)
+•	Data urodzenia (date picker)
+•	Email (max 200 znaków, validacja email)
+•	Twoja ulubiona baza SQL (combobox):
+o	PostgreSQL (Id: 1)
+o	MySql (Id: 2)
+o	Oracle (Id: 3)
+o	MsSql (Id: 4)
+•	Notatki do zgłoszenia (textarea - max 5000 znaków)
+
+*
+* */

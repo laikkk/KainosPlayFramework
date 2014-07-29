@@ -5,12 +5,12 @@
 
 create table persons (
   id                        bigint not null,
-  name                      varchar(255),
-  surname                   varchar(255),
+  name                      varchar(100),
+  surname                   varchar(100),
   birthdate                 timestamp,
-  email                     varchar(255),
+  email                     varchar(200),
   favoritedatabase          integer,
-  notes                     varchar(255),
+  notes                     varchar(5000),
   constraint pk_persons primary key (id))
 ;
 

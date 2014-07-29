@@ -4,7 +4,6 @@ import models.Persons;
 
 import play.data.Form;
 import play.mvc.*;
-import play.data.validation.*;
 
 import views.html.*;
 
@@ -27,3 +26,4 @@ public class Application extends Controller {
         return ok(index.render(Form.form(Persons.class),"Row added ;)"));
     }
 }
+

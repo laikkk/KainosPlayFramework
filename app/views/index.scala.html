@@ -1,7 +1,7 @@
 @(myForm: Form[Persons])(message: String)
 @import helper.twitterBootstrap._
 
-@main(message){
+@main("By Kamil Zielinski"){
 <div class="page-header">
     <div class="container">
         <h1>Add person</h1>
@@ -18,7 +18,7 @@
         @helper.inputText(myForm("email"), '_label -> "E-mail", 'size -> 100)
         @helper.select(myForm("favoritedatabase"),options = Seq("1"->"PostgreSQL", "2"->"MySql", "3"->"Oracle", "4"->"MsSql"),'_label -> "Favorite Database" )
         @helper.textarea(field = myForm("notes"), 'id -> "notes",'_label -> "Notes")
-        <button>Add Person</button>
+        <button class="btn btn-success btn-lg">Add Person</button>
         }
     </div>
 </div>
