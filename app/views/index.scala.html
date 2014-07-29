@@ -1,25 +1,31 @@
-@(message: String)
+@(myForm: Form[Persons])(message: String)
+@import helper.twitterBootstrap._
 
-<form action="@routes.Application.addPerson()" method="post">
-    <label>Name</label>
-    <input type="text" name="name">
-    <label>Surname</label>
-    <input type="text" name="surname">
-    <label>Birth date</label>
-    <input type="text" name="birthdate">
-    <label>E-mail</label>
-    <input type="email" name="email">
-    <label>Favorite Database</label>
-    <select name="favoritedatabase">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-    </select>
-    <label>Notes</label>
-    <textarea name="notes"></textarea>
-    <button>Submit</button>
-</form>
+@main(message){
+<div class="page-header">
+    <div class="container">
+        <h1>Add person</h1>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>@message</h1>
+        @helper.form(action = routes.Application.addPerson() ) {
+        @helper.inputText(myForm("name"), '_label -> "Last name",  'size -> 100)
+        @helper.inputText(myForm("surname"), '_label -> "Surname",  'size -> 100)
+        @helper.inputDate(myForm("birthdate"),  '_label -> "Birth date")
+        @helper.inputText(myForm("email"), '_label -> "E-mail", 'size -> 100)
+        @helper.select(myForm("favoritedatabase"),options = Seq("1"->"PostgreSQL", "2"->"MySql", "3"->"Oracle", "4"->"MsSql"),'_label -> "Favorite Database" )
+        @helper.textarea(field = myForm("notes"), 'id -> "notes",'_label -> "Notes")
+        <button>Add Person</button>
+        }
+    </div>
+</div>
+}
+
+
+
 
 
 

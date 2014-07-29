@@ -1,22 +1,29 @@
 package controllers;
 
 import models.Persons;
-import play.*;
 
 import play.data.Form;
 import play.mvc.*;
+import play.data.validation.*;
 
 import views.html.*;
 
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render("Maine new application is ready."));
+        return ok(index.render(Form.form(Persons.class),""));
     }
 
     public static Result addPerson() {
-        Persons person = Form.form(Persons.class).bindFromRequest().get();
-        person.save();
-        return redirect(routes.Application.addPerson());
+        Form<Persons> filledForm = Form.form(Persons.class).bindFromRequest();
+
+        if(filledForm.hasErrors()){
+            return badRequest(index.render(filledForm,"Oh you did sth wrong"));
+        }
+
+        Persons persons = filledForm.get();
+        persons.save();
+
+        return ok(index.render(Form.form(Persons.class),"Row added ;)"));
     }
 }

@@ -1,13 +1,17 @@
 package models;
 
+import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
+//import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+
+import java.util.Date;
+
+import static play.data.validation.Constraints.Required;
 
 /**
  * Created by kamilzie on 28.07.14.
@@ -18,24 +22,31 @@ public class Persons extends Model {
     @Id
     public long id;
 
-   // @NotNull
-   // @Size(max=100)
+    @Required
+    @Constraints.MaxLength(100)
     public String name;
+    // @Column(length = 100)
 
-   // @NotNull
-   // @Size(max=100)
+    @Required
+    @Constraints.MaxLength(100)
     public String surname;
-    public String birthdate;
+    // @Column(length =100)
 
-   // @NotNull
-   // @Size(max=200)
-   // @Pattern(regexp="^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$")
+    @Required
+    public Date birthdate;
+
+    @Required
+    @Constraints.MaxLength(200)
     public String email;
-    public String favoritedatabase; //TODO data type
+    //  @Column(length = 200)
+    //  @Constraints.Pattern("^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$")
 
-   // @NotNull
-   // @Size(max=5000)
+    @Required
+    public int favoritedatabase;
+
+    @Required
+    @Constraints.MaxLength(5000)
     public String notes;
-
+//  @Column(length = 5000)
 
 }

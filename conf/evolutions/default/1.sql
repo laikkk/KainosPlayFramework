@@ -7,9 +7,9 @@ create table persons (
   id                        bigint not null,
   name                      varchar(255),
   surname                   varchar(255),
-  birthdate                 varchar(255),
+  birthdate                 timestamp,
   email                     varchar(255),
-  favoritedatabase          varchar(255),
+  favoritedatabase          integer,
   notes                     varchar(255),
   constraint pk_persons primary key (id))
 ;

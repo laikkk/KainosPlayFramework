@@ -13,13 +13,20 @@ libraryDependencies ++= Seq(
   javaEbean,
   cache,
   javaWs,
-javaJpa
+  javaJpa
 )
 
 val appDependencies = Seq(
   "org.hibernate" % "hibernate-entitymanager" % "4.3.6.Final"
 )
 
+
+
 libraryDependencies += "org.postgresql" % "postgresql" % "9.3-1102-jdbc41"
 
 libraryDependencies += "org.hibernate" % "hibernate-entitymanager" % "4.3.6.Final"
+
+libraryDependencies ++= Seq(
+  "org.webjars" %% "webjars-play" % "2.3.0",
+  "org.webjars" % "bootstrap" % "3.1.1-2"
+)
